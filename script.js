@@ -8,7 +8,7 @@ function addTask() {
     const taskInput = document.getElementById("taskInput");
 
     if (taskInput.value.trim() === "") {
-        alert("Please enter a task!");
+        alert("Please enter a name!");
         return;
     }
 
@@ -43,9 +43,14 @@ function displayTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <span onclick="editTask(${index})">${task}</span>
-            <button onclick="deleteTask(${index})">Delete</button>
+            <span>${index + 1}</span>
+            <span>${task}</span>
+            <span class="actions">
+                <span onclick="editTask(${index})">✏️</span>
+                <span onclick="deleteTask(${index})">❌</span>
+            </span>
         `;
+        li.style.marginRight = "50px"; 
         taskList.appendChild(li);
     });
 }
@@ -63,8 +68,12 @@ function displayFilteredTasks(filteredTasks) {
     filteredTasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <span onclick="editTask(${index})">${task}</span>
-            <button onclick="deleteTask(${index})">Delete</button>
+            <span>${index + 1}</span>
+            <span>${task}</span>
+            <span class="actions">
+                <span onclick="editTask(${index})">✏️</span>
+                <span onclick="deleteTask(${index})">❌</span>
+            </span>
         `;
         taskList.appendChild(li);
     });
