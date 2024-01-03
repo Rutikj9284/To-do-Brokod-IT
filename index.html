@@ -8,20 +8,25 @@
   </head>
   <body>
     <div class="container">
-      <h1>To-Do List</h1>
+      <h1>Search in Todo List App</h1>
       <div>
+        <input type="text" id="taskInput" placeholder="Enter Your Name" />
+        <button onclick="addTask()">Add User</button>
+      </div>
+      <div class="align-right">
         <input
           type="text"
           id="searchInput"
           oninput="searchTasks()"
-          placeholder="Search tasks"
+          placeholder="Search..."
         />
       </div>
+      <div class="column-names">
+        <span>#</span>
+        <span>Your Name</span>
+        <span>Actions</span>
+    </div>
 
-      <div>
-        <input type="text" id="taskInput" placeholder="Add a new task" />
-        <button style="background-color: rgb(12, 231, 12);" onclick="addTask()">Add Task</button>
-      </div>
       <ul id="taskList"></ul>
     </div>
     <script src="script.js"></script>
