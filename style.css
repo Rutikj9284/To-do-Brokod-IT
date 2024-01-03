@@ -1,12 +1,5 @@
-/* html {
-    background-color: #E4E9FD;
-    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
-    min-height: 1000px;
-    font-family: 'helvetica neue';
-  } */
 body {
-    font-family: Arial, sans-serif;
-    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    font-family: Georgia, 'Times New Roman', Times, serif Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -23,16 +16,23 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+.align-right {
+    max-width: fit-content;
+    margin-left: auto;
+}
+
+.align-right > input{
+    border: 3px solid #cc0000;
+    border-radius: 3px;
+    padding: 8px;
+}
 
 ul {
     list-style: none;
     padding: 0;
 }
 .container > div {
-    background-color: #f8f8f8;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 3px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
@@ -40,30 +40,40 @@ ul {
 
 .container > div input {
     flex-grow: 1;
-    margin-right: 10px;
 }
 
 .container > div button {
-    background-color: #4caf50;
+    background-color: #15ddda;
     color: #fff;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
-.container > div button:hover {
-    background-color: #45a049;
+.column-names {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+    border-bottom: 1px solid #141414;
+}
+
+.column-names span {
+    flex-grow: 1;
+    text-align: start;
 }
 
 li {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    align-items: flex-start;
+    margin: 0; /* Set margin to zero */
+    padding: 0 10px; /* Adjust padding as needed */
+    border-bottom: 1px solid #ddd;
+}
+
+
+li span:first-child {
+    font-weight: bold; /* Make only the first span (sr. no.) bold */
 }
 
 li button {
@@ -71,7 +81,7 @@ li button {
     color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 5px 8px; /* Adjust padding for edit and delete buttons */
     cursor: pointer;
 }
 
